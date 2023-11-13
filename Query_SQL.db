@@ -1,0 +1,64 @@
+CREATE TABLE IF NOT EXISTS demograficos_data (
+    ID integer PRIMARY KEY not null,
+    city text,
+    State text,
+    Median_age numeric,
+    Male poulation integer,
+    Female population integer,
+    Total population integer,
+    Foreing born integer,
+    Average Householdsize numeric,
+    State_code text
+);
+
+CREATE TABLE IF NOT EXISTS calidad_aire (
+    ID integer PRIMARY KEY not null,
+    city text,
+    CO numeric,
+    NO2 NUMERIC,
+    O3 NUMERIC,
+    SO2 NUMERIC,
+    PM2_5 NUMERIC,
+    PM10 NUMERIC,
+    OVERALL_AQI NUMERIC
+    );
+    
+INSERT INTO demograficos_data ( ID, city, State, Median_age, Male poulation, Female population, 'Total population', Foreing born, Average, Householdsize,
+State_code)
+
+    VALUES
+('Denver','Colorado',34.1,341137.0,341408.0,682545,113222.0,2.33,'CO'),
+('Provo','Utah',23.6,56231.0,59027.0,115258,10925.0,3.28,'UT'),
+('Hampton','Virginia',35.5,66214.0,70240.0,136454,6204.0,2.48,'VA'),
+('Birmingham', 'Alabama',35.6,102122.0,112789.0,214911,8258.0,2.21, 'AL'),
+('Greeley', 'Colorado',31.0,50792.0,50091.0,100883,11480.0,2.75, 'CO'),
+('Spring Valley','Nevada',37.0,96808.0,97147.0,193955,61072.0,2.79, 'NV'),
+('Tustin','California',33.4,39511.0,41052.0,80563,25034.0,3.27,'CA'),
+('Springfield','Massachusetts',31.8,74744.0,79592.0,154336,16226.0,2.81, 'MA'),
+('Fort Wayne','Indiana',34.7,124815.0,133329.0,258144,19146.0,2.45,'IN'),
+('Santa Ana','California',30.8,167503.0,167920.0,335423,152999.0,4.58,'CA'),
+('Dayton', 'Ohio',32.8,66631.0,73966.0,140597,7381.0,2.26,'OH');
+
+
+INSERT INTO calidad_aire (ID, city, CO, NO2, O3, SO2, PM2_5, PM10, OVERALL_AQI)
+VALUES 
+(1, 'Bayonne',  210.29, 1.56, 77.96, 0.14, 0.5, 0.92, 107),
+(2, 'Westland', 283.72, 13.02, 57.94, 3.01, 2.67, 4.77, 49),
+(3, 'Victoria', 267.03, 10.03, 58.65, 1.21, 1.37, 1.52, 49),
+(4, 'Las Cruces', 250.34, 7.97, 43.27, 0.06, 4.11, 14.77, 36),
+(5, 'Palm Bay',   236.99, 1.99, 63.66, 0.46, 6.07, 15.4, 64),
+(6, 'Cranston',  320.44, 16.79, 47.21, 0.24, 2.5, 3.58, 40),
+(7, 'Los Angeles',  634.19, 109.67, 14.66, 8.58, 20.7, 36.95, 116),
+(8, 'Ann Arbor',  277.04, 13.02, 54.36, 2.77, 2.74, 4.22, 46),
+(9, 'San Antonio',  247, 3.77, 49.35, 0.28, 8.58, 8.69, 41),
+(10, 'Birmingham', 230.31, 9, 46.49, 3.7, 1.47, 1.83, 39);
+
+SELECT
+  demograficos_data.city,
+  demograficos_data.'Total population',
+  calidad_aire.AQI
+FROM demograficos_data
+INNER JOIN calidad_aire
+ON city.id = calidad_aire.city
+ORDER BY  'Total population' DESC
+LIMIT 10;

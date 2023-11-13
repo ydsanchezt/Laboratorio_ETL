@@ -1,0 +1,5 @@
+AQI es un parámetro de 0 a 500. Cuanto más alto es el valor del AQI, mayor es el nivel de contaminación atmosférica en una región determinada. Valores menores a 50 representa buena calidad atmosférica, siendo este un buen indicador de la calidad del aire y el bajo riesgo para afectar a la salud pública. Entre tanto, un valor del AQI superior a 300 representa una calidad atmosférica altamente riesgosa.
+Por lo general, un valor del AQI de 100 se corresponde con la norma nacional de calidad del aire.
+Se observa que existe una tendencia entre el número de habitantes y el valor de AQI, esto se observa en datos de Estados como los Ángeles donde su AQI está por encima de 100.
+En estado por encima de 100, de acuerdo a las categorías de AQI, el índice es naranja es decir que es una calidad atmosférica insalubre para la salud, especialmente para grupos sensibles.
+ 

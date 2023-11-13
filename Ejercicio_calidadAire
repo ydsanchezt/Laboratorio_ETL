@@ -1,0 +1,21 @@
+Análisis de calidad del aire
+Carga los datos demográficos en una tabla utilizando pandas, utilizando el mismo CSV de demografía del ejemplo estudiado en clases.
+
+Importa directamente usando esta url con el siguiente código:
+
+url = "https://public.opendatasoft.com/explore/dataset/us-cities-demographics/download/?format=csv&timezone=Europe/Berlin&lang=en&use_labels_for_header=true&csv_separator=%3B"
+data = pd.read_csv(url, sep=';')
+
+Parsea los datos de calidad del aire para cada ciudad en la tabla demográfica obteniendo la información con la API https://api-ninjas.com/api/airquality. Crea una tabla de dimensiones utilizando pandas para almacenar estos datos.
+
+Toma el elemento concentration de cada entrada por fila.
+Limpia los datos demográficos realizando las siguientes acciones:
+
+Elimina las columnas: Race, Count y Number of Veterans.
+Elimina las filas duplicadas.
+Crea una base de datos en SQLite, carga las dos tablas procesadas ahí
+
+Aplica joins, y agregaciones para verificar si las ciudades más pobladas tienen la peor calidad del aire. (muestra las primeras 10 colúmnas y con eso responde la pregunta)
+
+Crea un script para el ejercicio 3, luego en un archivo markdown escribe la query SQL que utilizaste para responder la pregunta y escribe una explicación detallada de tu interpretación de los resultados, este dos archivo súbelo aquí. (Adjunta también la base de datos sqlite).
+
